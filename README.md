@@ -2,7 +2,7 @@
 
 An online or couch co-op version (digital) of the Machi Koro board game.
 
-# Goals
+## Goals
 * Cross browser friendly (include IE11)
 * Cross platform friendly (couch co-op particularly)
 * As leading edge in terms of programming language and techiques as possible
@@ -10,7 +10,7 @@ An online or couch co-op version (digital) of the Machi Koro board game.
 * A good design / UX (if anybody out there would like to contribute to design or UX please reach out)
 * At least capable of 2 players
 
-# Technology decisions / thoughts
+## Technology decisions / thoughts
 * WebComponents
 * Vanilla JS (Typescript)
 * Polyfills only when necessary
@@ -23,11 +23,11 @@ An online or couch co-op version (digital) of the Machi Koro board game.
 * MySQL / PHP for authentication on online service(?)
 * (down the road): general performance considerations
 
-# Potential adaptations
+## Potential adaptations
 * JSON file may just be initial game state + action / audit log
 * (?) Re-join a game, you get latest snapshot + latest actions? ....
 
-# MVP
+## MVP
 * PHP - will serve API requests with success or fail
 * PHP - will also generate a JSON file (one per game) with the current state of the game
 * PHP - JSON file - Uniquely named for the game being played
