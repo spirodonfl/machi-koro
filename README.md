@@ -13,6 +13,8 @@ An online or couch co-op version (digital) of the Machi Koro board game.
 ## Technology decisions / thoughts
 * WebComponents
 * Vanilla JS (Typescript)
+NOTE: TYPESCRIPT HAS A SERIOUS ISSUE WITH EXTENDING HTMLELEMENTS WHEN USING WEBCOMPONENTS W/ THE CONSTRUCTOR SUPER CALL
+BABEL + ESLINT ARE PROBABLY BETTER FOR RAW METAL
 * Polyfills only when necessary
 * Atomized (atomic) CSS (tailwind)
 * Online - PHP
@@ -22,6 +24,7 @@ An online or couch co-op version (digital) of the Machi Koro board game.
 * Finite state machines
 * MySQL / PHP for authentication on online service(?)
 * (down the road): general performance considerations
+NOTE: SHOULD ADD UNIT TESTING
 
 ## Potential adaptations
 * JSON file may just be initial game state + action / audit log
