@@ -12,19 +12,18 @@ An online or couch co-op version (digital) of the Machi Koro board game.
 
 ## Technology decisions / thoughts
 * WebComponents
-* Vanilla JS (Typescript)
-NOTE: TYPESCRIPT HAS A SERIOUS ISSUE WITH EXTENDING HTMLELEMENTS WHEN USING WEBCOMPONENTS W/ THE CONSTRUCTOR SUPER CALL
-BABEL + ESLINT ARE PROBABLY BETTER FOR RAW METAL
+* Vanilla JS (Babel + eslint)
 * Polyfills only when necessary
 * Atomized (atomic) CSS (tailwind)
 * Online - PHP
 * Couch co-op - Node (QT GUI)
+NOTE: Maybe we use something like https://github.com/parro-it/libui-napi instead?
 * Cover Android & iOS by implement a PWA
 * WebRTC - Might allow for pure mobile to mobile multiplayer with no server
 * Finite state machines
 * MySQL / PHP for authentication on online service(?)
 * (down the road): general performance considerations
-NOTE: SHOULD ADD UNIT TESTING
+* Mocha, Sinon, Chai (unit testing)
 
 ## Potential adaptations
 * JSON file may just be initial game state + action / audit log
