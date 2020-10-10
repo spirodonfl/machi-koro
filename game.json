@@ -1,0 +1,195 @@
+{
+    "uuid": "",
+    "state": 0,
+    "players": {},
+    "playerOrder": [],
+    "max_available_cards": 8,
+    "available_cards": [],
+    "has_started": 0,
+    "total_players": 0,
+    "max_players": 4,
+    "is_ready": 0,
+    "modifiers": {
+        "landmarks_cost_double": 0
+    },
+    "turn": {
+        "uiid": "",
+        "dice": [ 0, 0, 0 ],
+        "is_allowed_reroll": 0,
+        "has_rerolled": 0,
+        "is_allowed_another_turn": 0,
+        "has_taken_another_turn": 0,
+        "is_allowed_to_roll_two_dice": 0,
+        "has_rolled_two_dice": 0,
+        "income_from_everyone": 0,
+        "die_rolled_number": 0
+    },
+    "playerObject": {
+        "in_game": 0,
+        "is_forcing_start": 0,
+        "is_ready": 0,
+        "money": 3,
+        "landmarks_built": [ 0, 0, 0, 0 ],
+        "cards_on_deck": [ 0, 2 ],
+        "multiples": [ 1, 1 ],
+        "debt": {},
+        "income": 0,
+        "activated_cards": [],
+        "finished": 0
+    },
+    "types": [ "crop", "animal husbandry", "staple food", "drinks & food", "factory", "natural resources", "major establishment", "market" ],
+    "cards": [
+        {
+            "id": 0,
+            "name": "wheat field",
+            "description": "get 1 coin from the bank on anyones turn",
+            "is_landmark": 0, "die": [ 1 ], "type": 0, "typeText": "", "price": 1, "income": 1,
+            "from_player": 0, "from_all_players": 0, "from_any_one_player": 0, "from_bank": 1, "any_turn": 1,
+            "activated_by_type": 0
+        },
+        {
+            "id": 1,
+            "name": "ranch",
+            "description": "get 1 coin from the bank on anyones turn",
+            "is_landmark": 0, "die": [ 2 ], "type": 1, "typeText": "", "price": 1, "income": 1,
+            "from_player": 0, "from_all_players": 0, "from_any_one_player": 0, "from_bank": 1, "any_turn": 1,
+            "activated_by_type": 0
+        },
+        {
+            "id": 2,
+            "name": "bakery",
+            "description": "get 1 coin from the bank on your turn only",
+            "is_landmark": 0, "die": [ 2, 3 ], "type": 2, "typeText": "", "price": 1, "income": 1,
+            "from_player": 0, "from_all_players": 0, "from_any_one_player": 0, "from_bank": 1, "any_turn": 0,
+            "activated_by_type": 0
+        },
+        {
+            "id": 3,
+            "name": "cafe",
+            "description": "get 1 coin from the player who rolled the dice",
+            "is_landmark": 0, "die": [ 3 ],  "type": 3, "typeText": "", "price": 2, "income": 1,
+            "from_player": 1, "from_all_players": 0, "from_any_one_player": 0, "from_bank": 0, "any_turn": 1,
+            "activated_by_type": 0
+        },
+        {
+            "id": 4,
+            "name": "convenience store",
+            "description": "get 3 coins from the bank on your turn only",
+            "is_landmark": 0, "die": [ 4 ], "type": 2, "typeText": "", "price": 2, "income": 3,
+            "from_player": 0, "from_all_players": 0, "from_any_one_player": 0, "from_bank": 1, "any_turn": 0,
+            "activated_by_type": 0
+        },
+        {
+            "id": 5,
+            "name": "forest",
+            "description": "get 1 coin from the bank on anyones turn",
+            "is_landmark": 0, "die": [ 5 ], "type": 5, "typeText": "", "price": 3, "income": 1,
+            "from_player": 0, "from_all_players": 0, "from_any_one_player": 0, "from_bank": 1, "any_turn": 1,
+            "activated_by_type": 0
+        },
+        {
+            "id": 6,
+            "name": "business centre",
+            "description": "if this is your turn trade 1 non major establishment with another player",
+            "is_landmark": 0, "die": [ 6 ], "type": 6, "typeText": "", "price": 8, "income": 0,
+            "from_player": 0, "from_all_players": 0, "from_any_one_player": 1, "from_bank": 0, "any_turn": 0,
+            "activated_by_type": 0
+        },
+        {
+            "id": 7,
+            "name": "tv station",
+            "description": "if this is your turn take 5 coins from any one player",
+            "is_landmark": 0, "die": [ 6 ], "type": 6, "typeText": "", "price": 7, "income": 5,
+            "from_player": 0, "from_all_players": 0, "from_any_one_player": 1, "from_bank": 0, "any_turn": 0,
+            "activated_by_type": 0
+        },
+        {
+            "id": 8,
+            "name": "stadium",
+            "description": "get 2 coins from all players on your turn only",
+            "is_landmark": 0, "die": [ 6 ], "type": 6, "typeText": "", "price": 6, "income": 2,
+            "from_player": 0, "from_all_players": 1, "from_any_one_player": 0, "from_bank": 0, "any_turn": 0,
+            "activated_by_type": 0
+        },
+        {
+            "id": 9,
+            "name": "cheese factory",
+            "description": "if this is your turn get 3 coins from the bank for each animal husbandry establishment that you own",
+            "is_landmark": 0, "die": [ 7 ], "type": 4, "typeText": "", "price": 5, "income": 3,
+            "from_player": 0, "from_all_players": 0, "from_any_one_player": 0, "from_bank": 1, "any_turn": 0,
+            "activated_by_type": [ 1 ]
+        },
+        {
+            "id": 10,
+            "name": "furniture factory",
+            "description": "if this is your turn get 3 coins from the bank for each natural resource establishment that you own",
+            "is_landmark": 0, "die": [ 8 ], "type": 4, "typeText": "", "price": 3, "income": 3,
+            "from_player": 0, "from_all_players": 0, "from_any_one_player": 0, "from_bank": 1, "any_turn": 0,
+            "activated_by_type": [ 5 ]
+        },
+        {
+            "id": 11,
+            "name": "mine",
+            "description": "get 5 coins from the bank on anyones turn",
+            "is_landmark": 0, "die": [ 9 ], "type": 5, "typeText": "", "price": 6, "income": 5,
+            "from_player": 0, "from_all_players": 0, "from_any_one_player": 0, "from_bank": 1, "any_turn": 1,
+            "activated_by_type": 0
+        },
+        {
+            "id": 12,
+            "name": "family restaurant",
+            "description": "get 2 coins from the player who rolled the dice",
+            "is_landmark": 0, "die": [ 9, 10 ], "type": 3, "typeText": "", "price": 3, "income": 2,
+            "from_player": 1, "from_all_players": 0, "from_any_one_player": 0, "from_bank": 0, "any_turn": 1,
+            "activated_by_type": 0
+        },
+        {
+            "id": 13,
+            "name": "apple orchard",
+            "description": "get 3 coins from the bank on anyones turn",
+            "is_landmark": 0, "die": [ 10 ], "type": 0, "typeText": "", "price": 3, "income": 3,
+            "from_player": 0, "from_all_players": 0, "from_any_one_player": 0, "from_bank": 1, "any_turn": 1,
+            "activated_by_type": 0
+        },
+        {
+            "id": 14,
+            "name": "fruit and vegetable market",
+            "description": "if this is your turn get 2 coins from the bank for each crop establishment you own",
+            "is_landmark": 0, "die": [ 11, 12 ], "type": 7, "typeText": "", "price": 2, "income": 2,
+            "from_player": 0, "from_all_players": 0, "from_any_one_player": 0, "from_bank": 1, "any_turn": 0,
+            "activated_by_type": [ 0 ]
+        },
+        {
+            "id": 15,
+            "name": "station",
+            "description": "roll 2 dice",
+            "is_landmark": 1, "die": [ 0 ], "type": 0, "typeText": "", "price": 4, "income": 0,
+            "from_player": 0, "from_all_players": 0, "from_any_one_player": 0, "from_bank": 0, "any_turn": 1,
+            "activated_by_type": 0
+        },
+        {
+            "id": 16,
+            "name": "shopping mall",
+            "description": "earn +1 coin from your drinks + food and staple food establishments",
+            "is_landmark": 1, "die": [ 0 ], "type": 0, "typeText": "", "price": 10, "income": 0,
+            "from_player": 0, "from_all_players": 0, "from_any_one_player": 0, "from_bank": 0, "any_turn": 1,
+            "activated_by_type": [ 2, 3 ]
+        },
+        {
+            "id": 17,
+            "name": "amusement park",
+            "description": "if you roll matching dice take another turn after this one",
+            "is_landmark": 1, "die": [ 0 ], "type": 0, "typeText": "", "price": 16, "income": 0,
+            "from_player": 0, "from_all_players": 0, "from_any_one_player": 0, "from_bank": 0, "any_turn": 1,
+            "activated_by_type": 0
+        },
+        {
+            "id": 18,
+            "name": "tv tower",
+            "description": "once every turn you can choose to re-roll your dice",
+            "is_landmark": 1, "die": [ 0 ], "type": 0, "typeText": "", "price": 22, "income": 0,
+            "from_player": 0, "from_all_players": 0, "from_any_one_player": 0, "from_bank": 0, "any_turn": 1,
+            "activated_by_type": 0
+        }
+    ]
+}

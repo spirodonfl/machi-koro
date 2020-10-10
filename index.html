@@ -1,0 +1,92 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Test</title>
+
+        <script src="./js/data-cards.js"></script>
+        <script src="./js/data-strings.js"></script>
+
+        <script src="./js/fsm.js"></script>
+        <script src="./js/base-game-class.js"></script>
+        <script src="./js/player.js"></script>
+        <script src="./js/player-card.js"></script>
+        <script src="./js/card.js"></script>
+
+        <script src="./js/game.js"></script>
+
+        <script src="./js/base-html-element.js"></script>
+        <script src="./js/ui-create-game-form.js"></script>
+        <script src="./js/ui-player.js"></script>
+        <script src="./js/ui-message.js"></script>
+        <script src="./js/ui-card.js"></script>
+        <script src="./js/ui-die.js"></script>
+        <script src="./js/ui-done.js"></script>
+        <script src="./js/ui-view-cards.js"></script>
+        <script src="./js/ui-menu.js"></script>
+        <script src="./js/ui-action.js"></script>
+        <script src="./js/ui.js"></script>
+
+        <!-- If we wanted to bring in only "as-needed" stylesheets -->
+        <!-- <link href="./css/core.css" rel="stylesheet" /> -->
+        <link href="./css/main.css" rel="stylesheet" />
+    </head>
+    <body>
+        <create-game-form></create-game-form>
+        <div id="view">
+            <div id="players">
+                <ui-player data-class="player-one"></ui-player>
+                <ui-player data-class="player-two"></ui-player>
+                <ui-player data-class="player-three"></ui-player>
+                <ui-player data-class="player-four"></ui-player>
+            </div>
+            <div id="done-message">
+                <ui-done></ui-done>
+                <ui-message></ui-message>
+            </div>
+            <div id="menu-dice-view_cards">
+                <ui-menu></ui-menu>
+                <ui-die data-id="die-one"></ui-die>
+                <ui-die data-id="die-two"></ui-die>
+                <ui-view-cards data-id="river"></ui-view-cards>
+                <ui-view-cards data-id="landmarks"></ui-view-cards>
+                <ui-view-cards data-id="establishments"></ui-view-cards>
+            </div>
+            <div id="cards">
+                <!-- RIVER -->
+                <ui-river-card></ui-river-card>
+                <ui-river-card></ui-river-card>
+                <ui-river-card></ui-river-card>
+                <ui-river-card></ui-river-card>
+                <ui-river-card></ui-river-card>
+                <ui-river-card></ui-river-card>
+                <ui-river-card></ui-river-card>
+                <ui-river-card></ui-river-card>
+                <ui-river-card></ui-river-card>
+                <ui-river-card></ui-river-card>
+
+                <!-- LANDMARKS -->
+                <ui-landmark-card></ui-landmark-card>
+                <ui-landmark-card></ui-landmark-card>
+                <ui-landmark-card></ui-landmark-card>
+                <ui-landmark-card></ui-landmark-card>
+
+                <!-- ESTABLISHMENTS -->
+                <ui-establishment-card></ui-establishment-card>
+                <ui-establishment-card></ui-establishment-card>
+                <ui-establishment-card></ui-establishment-card>
+                <ui-establishment-card></ui-establishment-card>
+                <ui-establishment-card></ui-establishment-card>
+                <ui-establishment-card></ui-establishment-card>
+                <ui-establishment-card></ui-establishment-card>
+                <ui-establishment-card></ui-establishment-card>
+                <ui-establishment-card></ui-establishment-card>
+                <ui-establishment-card></ui-establishment-card>
+                <ui-establishment-card></ui-establishment-card>
+                <ui-establishment-card></ui-establishment-card>
+                <ui-establishment-card></ui-establishment-card>
+                <ui-establishment-card></ui-establishment-card>
+                <ui-establishment-card></ui-establishment-card>
+            </div>
+        </div>
+    </body>
+</html>

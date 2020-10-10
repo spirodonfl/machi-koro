@@ -1,0 +1,672 @@
+* {
+    box-sizing: border-box;
+}
+
+/* TODO: Consider making some variables as css classes instead. CSS vars are computed by the client on page load so they might have a detrimental perf effect */
+:root {
+    --ratio-width: 0;
+    --ratio-height: 0;
+    --document-width: 0;
+    --document-height: 0;
+    --font-size: calc(calc(var(--ratio-width) * 0.015) * 1px);
+
+    --color-transparent: transparent;
+    --color-current: currentColor;
+    --color-black: rgb(0, 0, 0);
+    --color-white: rgb(255, 255, 255);
+    --color-gray-100: rgb(247, 250, 252);
+    --color-gray-200: rgb(237, 242, 247);
+    --color-gray-300: rgb(226, 232, 240);
+    --color-gray-400: rgb(203, 213, 224);
+    --color-gray-500: rgb(160, 174, 192);
+    --color-gray-600: rgb(113, 128, 150);
+    --color-gray-700: rgb(74, 85, 104);
+    --color-gray-800: rgb(45, 55, 72);
+    --color-gray-900: rgb(26, 32, 44);
+    --color-red-100: rgb(255, 245, 245);
+    --color-red-200: rgb(254, 215, 215);
+    --color-red-300: rgb(254, 178, 178);
+    --color-red-400: rgb(252, 129, 129);
+    --color-red-500: rgb(245, 101, 101);
+    --color-red-600: rgb(229, 62, 62);
+    --color-red-700: rgb(197, 48, 48);
+    --color-red-800: rgb(155, 44, 44);
+    --color-red-900: rgb(116, 42, 42);
+    --color-orange-100: rgb(255, 250, 240);
+    --color-orange-200: rgb(254, 235, 200);
+    --color-orange-300: rgb(251, 211, 141);
+    --color-orange-400: rgb(246, 173, 85);
+    --color-orange-500: rgb(237, 137, 54);
+    --color-orange-600: rgb(221, 107, 32);
+    --color-orange-700: rgb(192, 86, 33);
+    --color-orange-800: rgb(156, 66, 33);
+    --color-orange-900: rgb(123, 52, 30);
+    --color-yellow-100: rgb(255, 255, 240);
+    --color-yellow-200: rgb(254, 252, 191);
+    --color-yellow-300: rgb(250, 240, 137);
+    --color-yellow-400: rgb(246, 224, 94);
+    --color-yellow-500: rgb(236, 201, 75);
+    --color-yellow-600: rgb(214, 158, 46);
+    --color-yellow-700: rgb(183, 121, 31);
+    --color-yellow-800: rgb(151, 90, 22);
+    --color-yellow-900: rgb(116, 66, 16);
+    --color-green-100: rgb(240, 255, 244);
+    --color-green-200: rgb(198, 246, 213);
+    --color-green-300: rgb(154, 230, 180);
+    --color-green-400: rgb(104, 211, 145);
+    --color-green-500: rgb(72, 187, 120);
+    --color-green-600: rgb(56, 161, 105);
+    --color-green-700: rgb(47, 133, 90);
+    --color-green-800: rgb(39, 103, 73);
+    --color-green-900: rgb(34, 84, 61);
+    --color-teal-100: rgb(230, 255, 250);
+    --color-teal-200: rgb(178, 245, 234);
+    --color-teal-300: rgb(129, 230, 217);
+    --color-teal-400: rgb(79, 209, 197);
+    --color-teal-500: rgb(56, 178, 172);
+    --color-teal-600: rgb(49, 151, 149);
+    --color-teal-700: rgb(44, 122, 123);
+    --color-teal-800: rgb(40, 94, 97);
+    --color-teal-900: rgb(35, 78, 82);
+    --color-blue-100: rgb(235, 248, 255);
+    --color-blue-200: rgb(190, 227, 248);
+    --color-blue-300: rgb(144, 205, 244);
+    --color-blue-400: rgb(99, 179, 237);
+    --color-blue-500: rgb(66, 153, 225);
+    --color-blue-600: rgb(49, 130, 206);
+    --color-blue-700: rgb(43, 108, 176);
+    --color-blue-800: rgb(44, 82, 130);
+    --color-blue-900: rgb(42, 67, 101);
+    --color-indigo-100: rgb(235, 244, 255);
+    --color-indigo-200: rgb(195, 218, 254);
+    --color-indigo-300: rgb(163, 191, 250);
+    --color-indigo-400: rgb(127, 156, 245);
+    --color-indigo-500: rgb(102, 126, 234);
+    --color-indigo-600: rgb(90, 103, 216);
+    --color-indigo-700: rgb(76, 81, 191);
+    --color-indigo-800: rgb(67, 65, 144);
+    --color-indigo-900: rgb(60, 54, 107);
+    --color-purple-100: rgb(250, 245, 255);
+    --color-purple-200: rgb(233, 216, 253);
+    --color-purple-300: rgb(214, 188, 250);
+    --color-purple-400: rgb(183, 148, 244);
+    --color-purple-500: rgb(159, 122, 234);
+    --color-purple-600: rgb(128, 90, 213);
+    --color-purple-700: rgb(107, 70, 193);
+    --color-purple-800: rgb(85, 60, 154);
+    --color-purple-900: rgb(68, 51, 122);
+    --color-pink-100: rgb(255, 245, 247);
+    --color-pink-200: rgb(254, 215, 226);
+    --color-pink-300: rgb(251, 182, 206);
+    --color-pink-400: rgb(246, 135, 179);
+    --color-pink-500: rgb(237, 100, 166);
+    --color-pink-600: rgb(213, 63, 140);
+    --color-pink-700: rgb(184, 50, 128);
+    --color-pink-800: rgb(151, 38, 109);
+    --color-pink-900: rgb(112, 36, 89);
+
+    --player-one-color: var(--color-red-600);
+    --player-two-color: var(--color-blue-600);
+    --player-three-color: var(--color-orange-600);
+    --player-four-color: var(--color-green-600);
+    --player-one-color-light: var(--color-red-200);
+    --player-two-color-light: var(--color-blue-200);
+    --player-three-color-light: var(--color-orange-200);
+    --player-four-color-light: var(--color-green-200);
+
+    --resource-type-green-bg-color: var(--color-green-500);
+    --resource-type-green-text-color: var(--color-green-900);
+    --resource-type-green-border: 2px solid var(--color-green-300);
+
+    --message-bg-on: var(--color-green-400);
+    --message-bg-off: var(--color-green-100);
+    --player-one-name-bg-on: var(--player-one-color);
+    --player-one-name-bg-off: var(--player-one-color-light);
+    --player-two-name-bg-on: var(--player-two-color);
+    --player-two-name-bg-off: var(--player-two-color-light);
+    --player-three-name-bg-on: var(--player-three-color);
+    --player-three-name-bg-off: var(--player-three-color-light);
+    --player-four-name-bg-on: var(--player-four-color);
+    --player-four-name-bg-off: var(--player-four-color-light);
+    --card-bg-on: var(--color-gray-300);
+    --card-bg-off: var(--color-gray-200);
+    --player-coins-bg-on: var(--color-gray-700);
+    --player-coins-bg-off: var(--color-gray-400);
+    --player-landmarks-bg-on: var(--color-gray-700);
+    --player-landmarks-bg-off: var(--color-gray-400);
+    --die-bg-on: var(--color-gray-300);
+    --die-bg-off: var(--color-gray-100);
+    --done-bg-on: var(--color-red-300);
+    --done-bg-off: var(--color-red-100);
+}
+
+.single-line-centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+body, html {
+    height: 100%;
+    display: grid;
+    margin: 0px;
+    padding: 0px;
+    font-size: var(--font-size);
+    font-family: Consolas;
+}
+
+create-game-form {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+}
+
+/***** THE VIEW *****/
+#view {
+    padding: 1.5%;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: repeat(4, min-content);
+    background-color: var(--color-gray-900);
+}
+
+/***** PLAYERS WRAPPER *****/
+#players {
+    display: grid;
+    grid-template-columns: repeat(4, 22.7%);
+    margin-bottom: 1%;
+    grid-column-gap: 3%;
+}
+
+/***** MENU/DICE/VIEW CARDS WRAPPER *****/
+#menu-dice-view_cards {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    width: 100%;
+    grid-column-gap: 2%;
+    margin-bottom: 1%;
+}
+#menu-dice-view_cards ui-die {
+    justify-self: center;
+    align-self: center;
+}
+
+/***** DONE/MESSAGE WRAPPER *****/
+#done-message {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    grid-column-gap: 2%;
+    margin-bottom: 1%;
+}
+
+/***** CARDS *****/
+#cards {
+    max-width: 98vw;
+    max-height: 87vw;
+    overflow-x: scroll;
+    display: grid;
+    grid-template-columns: repeat(29, min-content);
+    column-gap: 3%;
+    padding-bottom: 1%;
+    margin-bottom: 1%;
+}
+
+/***** ACTIONS *****/
+/* TODO: Determine which action classes/styles can go */
+.action {
+    width: 100%;
+    height: calc(calc(var(--ratio-height) * 0.06) * 1px);
+
+    background-color: var(--color-gray-300);
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    text-transform: uppercase;
+}
+
+.action.done {
+    width: 55px;
+    height: 50px;
+    justify-content: center;
+    border-radius: 10px;
+    text-transform: uppercase;
+    text-align: center;
+    border: 2px solid var(--color-red-400);
+    background-color: var(--done-bg-on);
+    color: var(--color-red-700);
+    font-weight: bold;
+    align-items: center;
+    display: flex;
+}
+
+/* TODO: Fix width / height stuff for menu and view-cards */
+.action.menu {
+    background-color: var(--color-blue-100);
+    width: 55px;
+    height: 50px;
+    justify-content: center;
+    border-radius: 10px;
+    border: 2px solid var(--color-blue-400);
+    align-content: center;
+    text-transform: uppercase;
+    align-items: center;
+    display: flex;
+    font-weight: bold;
+    color: var(--color-blue-700);
+}
+
+.action.view-cards {
+    width: 55px;
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    border: 2px solid transparent;
+    background: none;
+    border: none;
+}
+.action.view-cards .river-icon {
+    background-color: var(--color-blue-300);
+    width: calc(calc(var(--ratio-width) * 0.04) * 1px);
+    height: calc(calc(var(--ratio-height) * 0.055) * 1px);
+    border: 2px solid var(--color-blue-500);
+    display: block;
+    vertical-align: middle;
+    margin: 0px auto;
+}
+.action.view-cards .landmarks-icon {
+    background-color: var(--color-red-300);
+    width: calc(calc(var(--ratio-width) * 0.04) * 1px);
+    height: calc(calc(var(--ratio-height) * 0.055) * 1px);
+    border: 2px solid var(--color-red-500);
+    display: block;
+    vertical-align: middle;
+    margin: 0px auto;
+}
+.action.view-cards .establishments-icon {
+    background-color: var(--color-purple-300);
+    width: calc(calc(var(--ratio-width) * 0.04) * 1px);
+    height: calc(calc(var(--ratio-height) * 0.055) * 1px);
+    border: 2px solid var(--color-purple-500);
+    display: block;
+    vertical-align: middle;
+    margin: 0px auto;
+}
+
+.re-roll {
+    border: 2px solid var(--color-indigo-600);
+    border-radius: 6px;
+    background-color: var(--color-indigo-300);
+}
+
+.end-turn {
+    border: 2px solid var(--color-red-600);
+    border-radius: 6px;
+    background-color: var(--color-red-300);
+}
+
+.menu {
+    border: 2px solid var(--color-gray-600);
+    border-radius: 6px;
+    background-color: var(--color-gray-300);
+}
+
+.view-river {
+    border: 2px solid var(--color-blue-600);
+    border-radius: 6px;
+    background-color: var(--color-blue-300);
+}
+
+.view-landmarks {
+    border: 2px solid var(--color-pink-600);
+    border-radius: 6px;
+    background-color: var(--color-pink-300);
+}
+
+.view-establishments {
+    border: 2px solid var(--color-purple-600);
+    border-radius: 6px;
+    background-color: var(--color-purple-300);
+}
+
+/***** DICE *****/
+/* TODO: Merge this appropriately with .action */
+.die {
+    width: 100%;
+    height: calc(calc(var(--ratio-height) * 0.06) * 1px);
+
+    background-color: var(--die-bg-on);
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    text-transform: uppercase;
+}
+.die-one, .die-two {
+    width: calc(calc(var(--ratio-height) * 0.06) * 1px);
+    border-radius: 20%;
+    border: 2px solid var(--color-gray-500);
+    font-size: calc(var(--font-size) * 1.5);
+    font-weight: bold;
+}
+
+/***** MESSAGE WRAPPER *****/
+#message {
+    margin-bottom: 3%;
+}
+
+/***** MESSAGE *****/
+.message {
+    width: 100%;
+    padding: 1%;
+
+    font-weight: bold;
+    font-size: calc(var(--font-size) * 1.25);
+
+    background-color: var(--message-bg-on);
+    color: var(--color-green-900);
+    border: 3px solid var(--color-green-900);
+    height: calc(calc(var(--ratio-height) * 0.06) * 1px);
+
+    text-transform: uppercase;
+}
+
+/***** PLAYER *****/
+.player {
+    width: 100%;
+    display: grid;
+    grid-template-areas: 'p-p p-n' 'p-p p-c' 'p-p p-l';
+    grid-template-columns: 40% 60%;
+}
+.player.disabled {
+    opacity: 0.2;
+}
+.player-one .picture {
+    background-color: var(--player-one-color-light);
+    border: 2px solid var(--player-one-color);
+}
+.player-two .picture {
+    background-color: var(--player-two-color-light);
+    border: 2px solid var(--player-two-color);
+}
+.player-three .picture {
+    background-color: var(--player-three-color-light);
+    border: 2px solid var(--player-three-color);
+}
+.player-four .picture {
+    background-color: var(--player-four-color-light);
+    border: 2px solid var(--player-four-color);
+}
+.player .picture {
+    grid-area: p-p;
+    padding: 1px;
+    margin-right: 6px;
+}
+.player .picture .img {
+    width: 100%;
+    height: 100%;
+    /* TODO: Create avatars as css variables so they can be dynamically applied here */
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSSWjoKPWJCkWBuJbWSIF5XwknM_uA26_5Qfw&usqp=CAU);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.player .name {
+    grid-area: p-n;
+
+    font-weight: bold;
+    text-transform: uppercase;
+
+    color: var(--color-white);
+
+    margin-bottom: 2%;
+    background-color: var(--color-gray-700);
+    border: 2px solid black;
+    padding: 4% 0%;
+}
+.player .name.highlight {
+    color: var(--color-pink-800);
+    background-color: var(--color-white) !important;
+    border-color: var(--color-pink-400);
+}
+.player-one .name {
+    background-color: var(--player-one-name-bg-on);
+    border: 2px solid var(--player-one-color-light);
+}
+.player-two .name {
+    background-color: var(--player-two-name-bg-on);
+    border: 2px solid var(--player-two-color-light);
+}
+.player-three .name {
+    background-color: var(--player-three-name-bg-on);
+    border: 2px solid var(--player-three-color-light);
+}
+.player-four .name {
+    background-color: var(--player-four-name-bg-on);
+    border: 2px solid var(--player-four-color-light);
+}
+.player .coins-landmarks {
+    grid-area: p-c-l;
+}
+.player .coins {
+    grid-area: p-c;
+    margin-bottom: 2%;
+}
+.player .coins-wrapper {
+    background-color: var(--player-coins-bg-on);
+    border: 2px solid var(--color-gray-500);
+    width: 100%;
+    padding: 4% 0%;
+    padding-left: 4%;
+}
+.player .coins-icon {
+    background-color: var(--color-orange-300);
+    width: calc(calc(var(--ratio-width) * 0.022) * 1px);
+    height: calc(calc(var(--ratio-height) * 0.022) * 1px);
+    border-radius: 50%;
+    box-shadow: 0px 0px 3px black;
+    border: 1px solid var(--color-orange-500);
+    display: inline-block;
+    vertical-align: middle;
+}
+.player .coins-count {
+    color: white;
+    padding: 1px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.player .landmarks {
+    grid-area: p-l;
+}
+.player .landmarks-wrapper {
+    background-color: var(--player-landmarks-bg-on);
+    border: 2px solid var(--color-gray-500);
+    width: 100%;
+    padding: 4% 0%;
+    padding-left: 4%;
+}
+.player .landmarks-icon {
+    background-color: var(--color-red-300);
+    width: calc(calc(var(--ratio-width) * 0.018) * 1px);
+    height: calc(calc(var(--ratio-height) * 0.022) * 1px);
+    box-shadow: 0px 0px 3px black;
+    border: 1px solid var(--color-red-500);
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0px calc(calc(var(--ratio-width) * 0.002) * 1px);
+}
+.player .landmarks-count {
+    color: white;
+    text-align:center;
+    padding: 1px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/***** CARD *****/
+.card {
+    width: calc(calc(var(--ratio-width) * 0.30) * 1px);
+    height: calc(calc(var(--ratio-width) * 0.60) * 1px);
+    /* TODO: We didn't need a height until we made this a web component. Why? */
+
+    padding: calc(calc(var(--ratio-width) * 0.01) * 1px);
+    border-radius: 8px;
+
+    display: grid;
+    grid-row-gap: 5%;
+
+    background-color: var(--card-bg-on);
+    border: 4px solid var(--color-gray-500);
+}
+.card.highlight {
+    border: 4px solid var(--color-gray-100);
+    background-color: var(--color-gray-100);
+}
+.card.staple-food,
+.card.natural-resources,
+.card.crop,
+.card.animal-husbandry {
+    border: 4px solid var(--color-blue-500);
+}
+.card.factory,
+.card.market {
+    border: 4px solid var(--color-green-500);
+}
+.card.drinks-and-food {
+    border: 4px solid var(--color-red-500);
+}
+.card.major-establishment {
+    border: 4px solid var(--color-purple-500);
+}
+.card.landmark {
+    border: 4px solid var(--color-orange-500);
+}
+.card.staple-food .resource,
+.card.natural-resources .resource,
+.card.crop .resource,
+.card.animal-husbandry .resource {
+    color: var(--color-blue-500);
+}
+.card.factory .resource,
+.card.market .resource {
+    color: var(--color-green-500);
+}
+.card.drinks-and-food .resource {
+    color: var(--color-red-500);
+}
+.card.major-establishment .resource {
+    color: var(--color-purple-500);
+}
+.card.landmark .resource {
+    color: var(--color-orange-500);
+}
+.card .activations {
+    background-color: var(--color-gray-800);
+    color: white;
+    font-weight: bold;
+}
+.card.staple-food .activations,
+.card.natural-resources .activations,
+.card.crop .activations,
+.card.animal-husbandry .activations {
+    background-color: var(--color-blue-800);
+}
+.card.factory .activations,
+.card.market .activations {
+    background-color: var(--color-green-800);
+}
+.card.drinks-and-food .activations {
+    background-color: var(--color-red-800);
+}
+.card.major-establishment .activations {
+    background-color: var(--color-purple-800);
+}
+.card.landmark .activations {
+    background-color: var(--color-orange-800);
+}
+.card .name {
+    font-size: calc(var(--font-size) * 1.5);
+    text-align: center;
+    margin-bottom: 2%;
+}
+.card .resource {
+    text-align: center;
+    font-weight: bold;
+}
+.card .description {
+    font-size: calc(var(--font-size) * 0.9);
+    height: calc(calc(var(--ratio-height) * 0.08) * 1px);
+    overflow-y: auto;
+    text-align: justify;
+}
+.card .income-price {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 2%;
+}
+.card .income {
+    background-color: var(--color-gray-200);
+    border: 1px solid var(--color-gray-400);
+    color: var(--color-green-800);
+}
+.card .price {
+    background-color: var(--color-gray-200);
+    border: 1px solid var(--color-gray-400);
+    color: var(--color-yellow-800);
+}
+.card .players {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    color: white;
+    grid-column-gap: 5%;
+}
+.card .player-one {
+    background-color: var(--player-one-color);
+}
+.card .player-two {
+    background-color: var(--player-two-color);
+}
+.card .player-three {
+    background-color: var(--player-three-color);
+}
+.card .player-four {
+    background-color: var(--player-four-color);
+}
+.card .buttons {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-row-gap: 2%;
+}
+.card .buttons > div {
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 5% 0%;
+    cursor: pointer;
+}
+.card .action {
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 5% 0%;
+    cursor: pointer;
+    border: 1px solid var(--color-gray-400);
+    border-radius: 8px;
+    background-color: var(--color-gray-200);
+}
+.card .action.purchase {
+    color: var(--color-yellow-600);
+}
+.card .action.activate {
+    color: var(--color-green-600);
+}
+.card .action.build {
+    color: var(--color-orange-600);
+}

@@ -1,0 +1,201 @@
+# Cards not in play yet
+
+Color: Red
+Die: 1
+Type: Coffee / Drinks
+Name: Sushi Bar
+Price: 4
+Description: If you have a harbor you get 3 coins from the player who rolled the dice
+
+Color: Green
+Die: 5-6
+Type: Briefcase
+Name: Loan Office
+Price: 0
+Description: When you construct this building, get 5 coins from the bank. When this building is activated, pay 2 coins to the bank, on your turn only.
+
+Color: Green
+Die: 2
+Type: Stape Food
+Name: General Store
+Price: 0
+Description: If you have less than 2 constructed landmarks, get 2 coins from the bank on your turn only.
+
+Color: Purple
+Die: 10
+Type: Establishment
+Name: International Exhibit Hall
+Price: 7
+Description: You may choose to activate another of your non establishments in place of this one, on your turn only. If you do, return this card to the market.
+
+Color: Purple
+Die: 11-13
+Type: Establishment
+Name: Park
+Price: 3
+Description: Redistribute all players' coins evenly among all players, on your turn only. If there is an uneven amount of coins, take coins from the bank to make up the difference.
+
+Color: Blue
+Die: 4
+Type: Agriculture
+Name: Flower Orchard
+Price: 2
+Description: Get 1 coin from the bank on anyones turn
+
+Color: Red
+Die: 7
+Type: Coffee / Drinks
+Name: Pizza Joint
+Price: 1
+Description: Get 1 coin from the player who rolled the dice
+
+Color: Purple (establishment)
+Die: 8-9
+Type: Establishment
+Name: Tax Office
+Price: 4
+Description: Take half (rounded down) of the coins from each player who has 10 coins or more on your turn only
+
+Color: Blue
+Die: 12-14
+Type: Boating
+Name: Tuna Boat
+Price: 5
+Description: On anyones turn: the current player rolls 2 dice. If you have a harbor you get as many coins as the dice total
+
+Color: Green
+Die: 12-13
+Type: Manufacturing
+Name: Food Warehouse
+Price: 2
+Description: Get 2 coins from the bank for each (coffee drinks) establishment that you own on your turn only
+
+Color: Green
+Die: 6
+Type: Staple food
+Name: Flower Shop
+Price: 1
+Description: Get 1 coin from the bank for each flower orchard you own
+
+Color: Red
+Die: 5
+Type: Coffee / Drinks
+Name: French Restaurant
+Price: 3
+Description: If the player who rolled this number has 2 or more constructed landmarks, get 5 coins from the player who rolled this dice
+
+Color: Purple
+Die: 7
+Type: Establishment
+Name: Publisher
+Price: 5
+Description: Get 1 coin from each player for each (Coffee / Drinks) and (Staple Foods) establishment they have on your turn only
+
+Color: Purple
+Die: 6
+Type: Establishment
+Name: Stadium
+Price: 6
+Description: Get 2 coins from all players on your turn only
+
+Color: Blue
+Die: 8
+Type: Boating
+Name: Mackerel Boat
+Price: 2
+Description: If you have a harbor, get 3 coins from the bank on anyones turn
+
+Color: Red
+Die: 12-14
+Type: Coffee / Drinks
+Name: Members Only Club
+Price: 4
+Description: If the player who rolled this number has 3 or more constructed landmarks, get all of their coins
+
+Color: Green
+Die: 11
+Type: Manufacturing
+Name: Soda Bottling Plant
+Price: 5
+Description: Get 1 coin from the bank for every (drinks / coffee) owned by all players on your turn only
+
+Color: Green
+Die: 7
+Type: Manufacturing
+Name: Cheese Factory
+Price: 5
+Description: Get 3 coins from the bank for each (animal husbandry) establishment that you own on your turn only
+
+Color: Green
+Die: 4
+Type: Manufacturing
+Name: Demolition Company
+Price: 2
+Description: Unconstruct one landmark, then get 8 coins
+(ALTERNATE DESCRIPTION): If possible, you must demolish one of your constructed landmarks by turning it back over to its unconstructed side. When you do, get 8 coins from the bank on your turn only.
+
+Color: Red
+Die: 8
+Type: Coffee / Drinks
+Name: Hamburger Stand
+Price: 1
+Description: Get 1 coin from the player who rolled the dice
+
+Color: Blue
+Die: 9
+Type: Natural Resource
+Name: Diamine
+Price: 6
+Description: Get 5 coins from the bank on anyones turn
+
+Color: Purple
+Die: 10
+Type: Establishment
+Name: Tech Startup
+Price: 1
+Description: At the end of each of your turns you may place 1 coin on this card. The total placed here is your investment. When activated, get an amount equal to your investment from all players, on your turn only.
+
+Color: Green
+Die: 9-10
+Type: Moving (briefcase)
+Name: Moving Company
+Price: 2
+Description: You must give a non establishment building that you own to another player. When you do, get 4 coins from the bank, on your turn only.
+
+Color: Green
+Dies: 9
+Type: Manufacturing
+Name: Winery
+Price: 3
+Description: Get 6 coins for each vineyard you own, on your turn only. Then, close this building for renovation.
+
+Color: Blue
+Die: 3
+Type: Agriculture
+Name: Vineyard
+Price: 3
+Description: Get 3 coins form the bank on anyones turn
+
+Color: Blue
+Die: 3-4
+Type: Agriculture
+Name: Corn Field
+Price: 2
+Description: If you have less than 2 constructed landmarks get 1 coins from the bank, on anyones turn.
+
+(LANDMARKS)
+Name: City Hall
+Price: ?
+Description: Immediately before buying establishments, if you have 0 coins, get 1 from the bank
+
+Name: Harbor
+Price: 2
+Description: If the dice total is 10 or more you may add 2 to the total on your turn only
+
+Name: Moon Tower
+Price: 22
+Description: Your may roll three dice on your turn. If you do, remove one of the dice after rolling and only count the remaining two
+
+Name: Airport
+Price: 30
+Description: If you build nothing on your turn, you get 10 coins from the bank
