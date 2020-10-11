@@ -20,7 +20,7 @@ Mostly to show that the following things could be done with vanilla JS, CSS and 
 
 # Demo
 
-A live demo is available here: https://github.com/spirodonfl/machi-koro
+A live demo is available here: https://spirofloropoulos.com/machikoro/
 
 # Other
 
