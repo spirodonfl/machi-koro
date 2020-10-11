@@ -18,6 +18,10 @@ Mostly to show that the following things could be done with vanilla JS, CSS and 
 
 * A different way of attacking responsiveness by using css variables to calculate ratios based on viewport size and adjust all elements accordingly (this should work on all devices, regardless of size, regardless of orientation, everything should fit in the screen)
 
+# Multiplayer?
+
+Only hotseat for now. Multiplayer is actually easy to add with this and super cost effective.
+
 # Demo
 
 A live demo is available here: https://spirofloropoulos.com/machikoro/
