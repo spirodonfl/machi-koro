@@ -1227,15 +1227,6 @@ window.addEventListener('load', () => {
             localStorage.setItem(storageDbName, games);
 
             _G.fsm().handle('start game');
-            _G.giveMoneyToPlayer(100, _G.getPlayerById(0));
-            _G.giveMoneyToPlayer(100, _G.getPlayerById(1));
-            _G.giveMoneyToPlayer(100, _G.getPlayerById(2));
-            _G.giveCardToPlayer(6, 0);
-            _G.giveCardToPlayer(6, 1);
-            _G.giveCardToPlayer(6, 2);
-            _G.giveCardToPlayer(7, 0);
-            _G.giveCardToPlayer(7, 1);
-            _G.giveCardToPlayer(7, 2);
             _UI.setup();
             _UI.readAction();
         }
